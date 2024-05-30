@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+int n,f;
+n=4;
+f=fact(n);
+printf("Factorial of %d is %d",n,f);
+}
+int fact(int n)
+{
+int t;
+if (n==1)
+return 1;
+else {
+return t = n*fact(n-1);
+}
+}
