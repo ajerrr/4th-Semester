@@ -3,7 +3,39 @@
 int main() {
     int array[100], position, i, n;
 
+    // Get the number of elements in the array
     printf("Enter the number of elements in the array: ");
     scanf("%d", &n);
 
-    printf("
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    // Get the position of the element to delete
+    printf("Enter the position of the element to delete: ");
+    scanf("%d", &position);
+
+    // Validate the position
+    if (position >= n+1) {
+        printf("Deletion not possible.\n");
+    } else {
+        // Shift elements to the left
+        for (i = position - 1; i < n - 1; i++) {
+            array[i] = array[i + 1];
+        }
+
+        // Decrease the size of the array
+        n--;
+
+        // Print the resulting array
+        printf("Resulting array: ");
+        for (i = 0; i < n; i++) {
+            printf("%d ", array[i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
