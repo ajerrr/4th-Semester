@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main() {
+    int array[100], position, i, n, value;
+
+    // Get the number of elements in the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    // Get the elements of the array
+    printf("Enter the elements of the array: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    // Get the position where the new element will be inserted
+    printf("Enter the position where the element should be inserted: ");
+    scanf("%d", &position);
+
+    // Get the new element to be inserted
+    printf("Enter the value to insert: ");
+    scanf("%d", &value);
+
+    // Validate the position
+    if (position > n+1 || position <= 0) {
+        printf("Insertion not possible.\n");
+    } else {
+        // Shift elements to the right
+        for (i = n; i >= position; i--) {
+            array[i] = array[i - 1];
+        }
+
+        // Insert the new element
+        array[position - 1] = value;
+
+        // Increase the size of the array
+        n++;
+
+        // Print the resulting array
+        printf("Resulting array: ");
+        for (i = 0; i < n; i++) {
+            printf("%d ", array[i]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
