@@ -1,0 +1,11 @@
+#inlcude<stdio.h>
+int main()
+{
+int num;
+binary(num);
+}
+void binary(int num)
+{
+int r;
+if(num==1)
+return 
